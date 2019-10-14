@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="Koromo_Copy_UX.DownloadSpace"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Koromo_Copy_UX"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Margin="0 5 0 0">
+        <Grid.Resources>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="Pink"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#FDAEBB"/>
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="Background" Value="#F98498"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border  Grid.Column="0" BorderThickness="1" BorderBrush="Gainsboro">
+            <DataGrid x:Name="DownloadList" ItemsSource="{Binding Items}" CanUserSortColumns="False" IsReadOnly="True" AutoGenerateColumns="False"
+                  SelectionMode="Extended" SelectionUnit="FullRow" IsSynchronizedWithCurrentItem="True" Background="Transparent"
+                  CanUserAddRows="False" materialDesign:DataGridAssist.CellPadding="4 2 2 2" materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
+                <DataGrid.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.MergedDictionaries>
+                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.DataGrid.xaml" />
+                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                        </ResourceDictionary.MergedDictionaries>
+                    </ResourceDictionary>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding 인덱스}" Width="79"
+                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                        <materialDesign:MaterialDataGridTextColumn.Header>
+                            <TextBlock Text="{DynamicResource index}"/>
+                        </materialDesign:MaterialDataGridTextColumn.Header>
+                    </materialDesign:MaterialDataGridTextColumn>
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding 제목}" Width="354"
+                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                        <materialDesign:MaterialDataGridTextColumn.Header>
+                            <TextBlock Text="{DynamicResource title}"/>
+                        </materialDesign:MaterialDataGridTextColumn.Header>
+                    </materialDesign:MaterialDataGridTextColumn>
+                    <materialDesign:MaterialDataGridTextColumn Binding="{Binding 경로}" Width="630"
+                                                               EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                        <materialDesign:MaterialDataGridTextColumn.Header>
+                            <TextBlock Text="{DynamicResource path}"/>
+                        </materialDesign:MaterialDataGridTextColumn.Header>
+                    </materialDesign:MaterialDataGridTextColumn>
+                </DataGrid.Columns>
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="Height" Value="25"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="BorderThickness" Value="0" />
+                                <Setter Property="Background" Value="Gray"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+            </DataGrid>
+        </Border>
+        <Grid Grid.Row="1" Margin="0 10 0 10">
+            <StackPanel HorizontalAlignment="Stretch">
+                <ProgressBar x:Name="Progress" Height="30" Foreground="Pink" Maximum="0" Value="0"/>
+                <Grid Margin="0 10 0 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" FontSize="13" HorizontalAlignment="Right">
+                        <Run Text="{DynamicResource download_status}"/>
+                        <Run Text=" : "/>
+                    </TextBlock>
+                    <TextBlock Margin="0 10 0 0" Grid.Row="1" Grid.Column="0" FontSize="13" HorizontalAlignment="Right">
+                        <Run Text="{DynamicResource total_download_size}"/>
+                        <Run Text=" : "/>
+                    </TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" FontSize="13" HorizontalAlignment="Right">
+                        <Run Text="{DynamicResource downloaded_size}"/>
+                        <Run Text=" : "/>
+                    </TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" FontSize="13" HorizontalAlignment="Right">
+                        <Run Text="{DynamicResource download_speed}"/>
+                        <Run Text=" : "/>
+                    </TextBlock>
+
+                    <TextBlock x:Name="Status" Grid.Row="0" Grid.Column="1" Text="0 / 0" Margin="5 0 0 0" HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="TotalSize" Grid.Row="1" Grid.Column="1" Text="0 MB" Margin="5 10 0 0" HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="DownloadSize" Grid.Row="2" Grid.Column="1" Text="0 MB" Margin="5 0 0 0" HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="DownloadSpeed" Grid.Row="3" Grid.Column="1" Text="0 KB/S" Margin="5 0 0 0" HorizontalAlignment="Left"/>
+
+                    <Grid Grid.RowSpan="4" Grid.Column="3" Margin="32 0 8 0">
+                        <lvc:CartesianChart x:Name="NetworkChart" Margin="0, 0, 0, 0" Width="200" HorizontalAlignment="Left" Hoverable="False" DataTooltip="{x:Null}">
+                            <lvc:CartesianChart.AxisX>
+                                <!--a small visual improvement, lets hide the first points (x = 0, x=1) to get better animations
+                                <lvc:Axis MinValue="2"></lvc:Axis>-->
+                                <lvc:Axis ShowLabels="False">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator IsEnabled="False"></lvc:Separator>
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisX>
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis MinValue="0"/>
+                            </lvc:CartesianChart.AxisY>
+                        </lvc:CartesianChart>
+                    </Grid>
+                    
+                    <Button Grid.RowSpan="4" Margin="0 0 30 0" Grid.Column="4" x:Name="Pause" Content="{DynamicResource pause}" Height="40" Width="200" BorderBrush="LightPink" Foreground="White" Click="Button_Click" Tag="State" HorizontalAlignment="Right"/>
+
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

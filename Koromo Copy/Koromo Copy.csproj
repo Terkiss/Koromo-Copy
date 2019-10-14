@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Antlr4.CodeGenerator.4.6.6\build\Antlr4.CodeGenerator.props" Condition="Exists('packages\Antlr4.CodeGenerator.4.6.6\build\Antlr4.CodeGenerator.props')" />
+  <Import Project="packages\Costura.Fody.3.1.6\build\Costura.Fody.props" Condition="Exists('packages\Costura.Fody.3.1.6\build\Costura.Fody.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41065EA7-BD36-4D4D-848E-D35F5A34CCAD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Koromo_Copy</RootNamespace>
+    <AssemblyName>Koromo Copy</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr4.Runtime, Version=4.6.0.0, Culture=neutral, PublicKeyToken=09abb75b9ed49849, processorArchitecture=MSIL">
+      <HintPath>packages\Antlr4.Runtime.4.6.6\lib\net45\Antlr4.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Costura, Version=3.1.6.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>packages\Costura.Fody.3.1.6\lib\net46\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="EngineIoClientDotNet, Version=0.9.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\EngineIoClientDotNet.0.9.22\lib\net45\EngineIoClientDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.7.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>packages\HtmlAgilityPack.1.8.7\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaDevices, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MediaDevices.1.8.0\lib\net45\MediaDevices.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagePack, Version=1.7.3.7, Culture=neutral, PublicKeyToken=b4a0369545f0a1be, processorArchitecture=MSIL">
+      <HintPath>packages\MessagePack.1.7.3.7\lib\net45\MessagePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketIoClientDotNet, Version=0.9.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SocketIoClientDotNet.0.9.13\lib\net45\SocketIoClientDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSocket4Net, Version=0.14.1.0, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
+      <HintPath>packages\WebSocket4Net.0.14.1\lib\net45\WebSocket4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="YoutubeExtractor, Version=0.10.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\YoutubeExtractor.0.10.11\lib\net35\YoutubeExtractor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algorithm\DisjointSet.cs" />
+    <Compile Include="Algorithm\Heap.cs" />
+    <Compile Include="Component\DC\DCArticle.cs" />
+    <Compile Include="Component\DC\DCCommon.cs" />
+    <Compile Include="Component\DC\DCParser.cs" />
+    <Compile Include="Component\EH\ExHentaiData.cs" />
+    <Compile Include="Component\HCommander.cs" />
+    <Compile Include="Component\Hitomi\HitomiBookmark.cs" />
+    <Compile Include="Component\Hitomi\HitomiExplore.cs" />
+    <Compile Include="Component\Hitomi\HitomiIndex.cs" />
+    <Compile Include="Component\Hitomi\HitomiQL.cs" />
+    <Compile Include="Component\Hitomi\HitomiTitle.cs" />
+    <Compile Include="Component\Hiyobi\HiyobiNonHManager.cs" />
+    <Compile Include="Component\Manazero\ManazeroArticle.cs" />
+    <Compile Include="Component\Manazero\ManazeroManager.cs" />
+    <Compile Include="Component\Manazero\ManazeroParser.cs" />
+    <Compile Include="Component\Mangashow\MangashowmeArticle.cs" />
+    <Compile Include="Component\Mangashow\MangashowmeCommon.cs" />
+    <Compile Include="Component\Mangashow\MangashowmeManager.cs" />
+    <Compile Include="Component\Mangashow\MangashowmeParser.cs" />
+    <Compile Include="Component\Pinterest\PinSetting.cs" />
+    <Compile Include="Component\SeriesInfo.cs" />
+    <Compile Include="Component\SeriesLog.cs" />
+    <Compile Include="Console\Utility\AutoConsole.cs" />
+    <Compile Include="Console\CommandLineParser.cs" />
+    <Compile Include="Console\DCInsideConsole.cs" />
+    <Compile Include="Console\KSSConsole.cs" />
+    <Compile Include="Console\LPConsole.cs" />
+    <Compile Include="Console\ScriptConsole.cs" />
+    <Compile Include="Crypto\Hash.cs" />
+    <Compile Include="Devices\DeviceManager.cs" />
+    <Compile Include="Elo\EloSystem.cs" />
+    <Compile Include="Fs\Explorer.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Component\Hitomi\HitomiDataSearchAdvanced.cs" />
+    <Compile Include="Component\Hitomi\HitomiDate.cs" />
+    <Compile Include="Component\Hitomi\HitomiDispatcher.cs" />
+    <Compile Include="Component\Hitomi\HitomiJson.cs" />
+    <Compile Include="Component\Hiyobi\HiyobiDispatcher.cs" />
+    <Compile Include="Component\Hiyobi\HiyobiParser.cs" />
+    <Compile Include="Component\IDispatchable.cs" />
+    <Compile Include="Component\EH\EHentaiParser.cs" />
+    <Compile Include="Component\Hiyobi\HiyobiArticle.cs" />
+    <Compile Include="Component\Hiyobi\HiyobiCommon.cs" />
+    <Compile Include="Component\Pinterest\PinParser.cs" />
+    <Compile Include="Component\Pixiv\PixivSetting.cs" />
+    <Compile Include="Console\Console.cs" />
+    <Compile Include="Console\ConsoleData.cs" />
+    <Compile Include="Console\ExHentaiConsole.cs" />
+    <Compile Include="Console\GrepConsole.cs" />
+    <Compile Include="Console\HitomiConsole.cs" />
+    <Compile Include="Console\HiyobiConsole.cs" />
+    <Compile Include="Console\InConsole.cs" />
+    <Compile Include="Console\InternalConsole.cs" />
+    <Compile Include="Console\OutConsole.cs" />
+    <Compile Include="Console\PixivConsole.cs" />
+    <Compile Include="Console\Utility\DownloadConsole.cs" />
+    <Compile Include="Console\Utility\RunConsole.cs" />
+    <Compile Include="Console\Utility\ScanConsole.cs" />
+    <Compile Include="Console\Utility\SeleniumConsole.cs" />
+    <Compile Include="Console\Utility\TestConsole.cs" />
+    <Compile Include="Console\YoutubeConsole.cs" />
+    <Compile Include="Controls\ColumnSorter.cs" />
+    <Compile Include="Controls\NativeTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Format.cs" />
+    <Compile Include="Html\HtmlCAL.cs" />
+    <Compile Include="Html\HtmlCALEX.cs" />
+    <Compile Include="Html\HtmlDiff.cs" />
+    <Compile Include="Html\HtmlLocalServer.cs" />
+    <Compile Include="Html\HtmlManager.cs" />
+    <Compile Include="Html\HtmlTree.cs" />
+    <Compile Include="Interface\IArticle.cs" />
+    <Compile Include="Interface\IConsole.cs" />
+    <Compile Include="Interface\ILazy.cs" />
+    <Compile Include="Interface\IManager.cs" />
+    <Compile Include="Interface\ISemaphore.cs" />
+    <Compile Include="Internal.cs" />
+    <Compile Include="Component\EH\EHentaiArticle.cs" />
+    <Compile Include="Component\EH\ExHentaiTool.cs" />
+    <Compile Include="Component\EH\ExHentaiParser.cs" />
+    <Compile Include="Extends.cs" />
+    <Compile Include="Fs\FileIcon\FolderIcon.cs" />
+    <Compile Include="Fs\FileIcon\IconHelper.cs" />
+    <Compile Include="Fs\FileIcon\IconListManager.cs" />
+    <Compile Include="Fs\FileIndexor.cs" />
+    <Compile Include="Fs\FileIndexorNode.cs" />
+    <Compile Include="Component\Hitomi\Analysis\HitomiAnalysis.cs" />
+    <Compile Include="Component\Hitomi\Analysis\HitomiAnalysisArtist.cs" />
+    <Compile Include="Component\Hitomi\Analysis\HitomiAnalysisArtistCount.cs" />
+    <Compile Include="Component\Hitomi\Analysis\HitomiAnalysisDateTime.cs" />
+    <Compile Include="Component\Hitomi\Analysis\HitomiAnalysisGallery.cs" />
+    <Compile Include="Component\Hitomi\Analysis\HitomiAnalysisRelatedTags.cs" />
+    <Compile Include="Component\Hitomi\Analysis\HitomiAnalysisTagCount.cs" />
+    <Compile Include="Component\Hitomi\Analysis\HitomiAnalysisTrend.cs" />
+    <Compile Include="Component\Hitomi\Analysis\HitomiPortableAnalysis.cs" />
+    <Compile Include="Component\Hitomi\HitomiArticle.cs" />
+    <Compile Include="Component\Hitomi\HitomiCommon.cs" />
+    <Compile Include="Component\Hitomi\HitomiData.cs" />
+    <Compile Include="Component\Hitomi\HitomiDataAnalysis.cs" />
+    <Compile Include="Component\Hitomi\HitomiDataModel.cs" />
+    <Compile Include="Component\Hitomi\HitomiDataParser.cs" />
+    <Compile Include="Component\Hitomi\HitomiDataQuery.cs" />
+    <Compile Include="Component\Hitomi\HitomiDataSearch.cs" />
+    <Compile Include="Component\Hitomi\HitomiLegalize.cs" />
+    <Compile Include="Component\Hitomi\HitomiLog.cs" />
+    <Compile Include="Component\Hitomi\HitomiParser.cs" />
+    <Compile Include="Component\Hitomi\HitomiSetting.cs" />
+    <Compile Include="Component\Hitomi\Translate\KoreanSeries.cs" />
+    <Compile Include="Component\Hitomi\Translate\KoreanTag.cs" />
+    <Compile Include="JS\ANTLR\JavaScriptBaseLexer.cs" />
+    <Compile Include="JS\ANTLR\JavaScriptBaseParser.cs" />
+    <Compile Include="JS\ANTLR\JSParser.cs" />
+    <Compile Include="JS\JSInterpreter.cs" />
+    <Compile Include="JS\JSParserGenerator.cs" />
+    <Compile Include="JS\JSParser.cs" />
+    <Compile Include="JS\JSScannerGenerator.cs" />
+    <Compile Include="KSS\KSSCommon.cs" />
+    <Compile Include="KSS\KSSCore.cs" />
+    <Compile Include="KSS\KSSSetting.cs" />
+    <Compile Include="KSS\KSSTerms.cs" />
+    <Compile Include="LP\BNFParser.cs" />
+    <Compile Include="LP\CALtoCS.cs" />
+    <Compile Include="LP\Code\LPBasicBlock.cs" />
+    <Compile Include="LP\Code\LPBuilder.cs" />
+    <Compile Include="LP\Code\LPConstant.cs" />
+    <Compile Include="LP\Code\LPDebugInfo.cs" />
+    <Compile Include="LP\Code\LPExportC.cs" />
+    <Compile Include="LP\Code\LPExportCS.cs" />
+    <Compile Include="LP\Code\LPFunction.cs" />
+    <Compile Include="LP\Code\LPModule.cs" />
+    <Compile Include="LP\Code\LPOperator.cs" />
+    <Compile Include="LP\Code\LPTest.cs" />
+    <Compile Include="LP\Code\LPType.cs" />
+    <Compile Include="LP\Code\LPValue.cs" />
+    <Compile Include="LP\ESRCAL.cs" />
+    <Compile Include="LP\Lang\HTMLParser.cs" />
+    <Compile Include="LP\LLParserGenerator.cs" />
+    <Compile Include="LP\LPKor.cs" />
+    <Compile Include="LP\ParserGenerator.cs" />
+    <Compile Include="LP\PartialParser.cs" />
+    <Compile Include="LP\ScannerGenerator.cs" />
+    <Compile Include="Monitor.cs" />
+    <Compile Include="Net\DownloadGroup.cs" />
+    <Compile Include="Net\DownloadQueue.cs" />
+    <Compile Include="Net\DPI\DPIB.cs" />
+    <Compile Include="Net\Driver\SeleniumWrapper.cs" />
+    <Compile Include="Net\EmiliaDispatcher.cs" />
+    <Compile Include="Net\EmiliaJobEXH.cs" />
+    <Compile Include="Net\EmiliaQueue.cs" />
+    <Compile Include="Net\EmiliaJob.cs" />
+    <Compile Include="Net\NetCommon.cs" />
+    <Compile Include="Component\Pixiv\Pixeez\Objects\Authorize.cs" />
+    <Compile Include="Component\Pixiv\Pixeez\Objects\MyFeed.cs" />
+    <Compile Include="Component\Pixiv\Pixeez\Objects\Paginated.cs" />
+    <Compile Include="Component\Pixiv\Pixeez\Objects\ProfileImageUrls.cs" />
+    <Compile Include="Component\Pixiv\Pixeez\Objects\Rank.cs" />
+    <Compile Include="Component\Pixiv\Pixeez\Objects\User.cs" />
+    <Compile Include="Component\Pixiv\Pixeez\Objects\UsersFavoriteWork.cs" />
+    <Compile Include="Component\Pixiv\Pixeez\Objects\UsersWork.cs" />
+    <Compile Include="Component\Pixiv\Pixeez\Objects\Work.cs" />
+    <Compile Include="Component\Pixiv\Pixeez\Pixeez.cs" />
+    <Compile Include="Component\Pixiv\PixivTool.cs" />
+    <Compile Include="Net\NetSetting.cs" />
+    <Compile Include="Net\Scheduler.cs" />
+    <Compile Include="Profiler.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Script\Koromo\KoromoCopyScript.cs" />
+    <Compile Include="Script\ScriptEngine.cs" />
+    <Compile Include="Script\ScriptManager.cs" />
+    <Compile Include="Script\ScriptSetting.cs" />
+    <Compile Include="Script\SRCAL\SRCALEngine.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Statistics.cs" />
+    <Compile Include="Strings.cs" />
+    <Compile Include="Utility\Develop\Manage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\Develop\Manage.Designer.cs">
+      <DependentUpon>Manage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\FileLineCounter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\FileLineCounter.Designer.cs">
+      <DependentUpon>FileLineCounter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\GalleryBlockTester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\GalleryBlockTester.designer.cs">
+      <DependentUpon>GalleryBlockTester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\HitomiExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\HitomiExplorer.Designer.cs">
+      <DependentUpon>HitomiExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\FsEnumerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\FsEnumerator.Designer.cs">
+      <DependentUpon>FsEnumerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\MetadataDownloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\MetadataDownloader.Designer.cs">
+      <DependentUpon>MetadataDownloader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\PGS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\PGS.Designer.cs">
+      <DependentUpon>PGS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\Record.Designer.cs">
+      <DependentUpon>Record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\RelatedTags\GraphViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\RelatedTags\GraphViewer.designer.cs">
+      <DependentUpon>GraphViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\RelatedTags\Graph\FixedString.cs" />
+    <Compile Include="Utility\RelatedTags\Graph\Graph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utility\RelatedTags\Graph\Graph.Designer.cs">
+      <DependentUpon>Graph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\RelatedTags\Graph\GraphNode.cs" />
+    <Compile Include="Utility\RelatedTags\Graph\GraphNodeManager.cs" />
+    <Compile Include="Utility\RelatedTags\Graph\ViewManager.cs" />
+    <Compile Include="Utility\RelatedTags\RelatedTagsTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\RelatedTags\RelatedTagsTest.Designer.cs">
+      <DependentUpon>RelatedTagsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\RelatedTags\ViewBuffer.cs" />
+    <Compile Include="Utility\StringTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\StringTools.Designer.cs">
+      <DependentUpon>StringTools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\UtilityDelegator.cs" />
+    <Compile Include="UX\UXSetting.cs" />
+    <Compile Include="Version.cs" />
+    <Compile Include="Wrapper\ydlWrapper.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Utility\Develop\Manage.resx">
+      <DependentUpon>Manage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\FileLineCounter.resx">
+      <DependentUpon>FileLineCounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\GalleryBlockTester.resx">
+      <DependentUpon>GalleryBlockTester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\HitomiExplorer.resx">
+      <DependentUpon>HitomiExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\FsEnumerator.resx">
+      <DependentUpon>FsEnumerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\MetadataDownloader.resx">
+      <DependentUpon>MetadataDownloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\PGS.resx">
+      <DependentUpon>PGS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\Record.resx">
+      <DependentUpon>Record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\RelatedTags\GraphViewer.resx">
+      <DependentUpon>GraphViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\RelatedTags\RelatedTagsTest.resx">
+      <DependentUpon>RelatedTagsTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\StringTools.resx">
+      <DependentUpon>StringTools.cs</DependentUpon>
+    </EmbeddedResource>
+    <Antlr4 Include="JS\ANTLR\JavaScriptLexer.g4">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>Koromo_Copy.JS.ANTLR</CustomToolNamespace>
+    </Antlr4>
+    <Antlr4 Include="JS\ANTLR\JavaScriptParser.g4">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>Koromo_Copy.JS.ANTLR</CustomToolNamespace>
+    </Antlr4>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages\PhantomJS.2.1.1\tools\phantomjs\phantomjs.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Costura.Fody.3.1.6\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Costura.Fody.3.1.6\build\Costura.Fody.props'))" />
+    <Error Condition="!Exists('packages\Fody.3.3.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.3.3.1\build\Fody.targets'))" />
+    <Error Condition="!Exists('packages\Antlr4.CodeGenerator.4.6.6\build\Antlr4.CodeGenerator.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Antlr4.CodeGenerator.4.6.6\build\Antlr4.CodeGenerator.props'))" />
+    <Error Condition="!Exists('packages\Antlr4.CodeGenerator.4.6.6\build\Antlr4.CodeGenerator.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Antlr4.CodeGenerator.4.6.6\build\Antlr4.CodeGenerator.targets'))" />
+  </Target>
+  <Import Project="packages\Fody.3.3.1\build\Fody.targets" Condition="Exists('packages\Fody.3.3.1\build\Fody.targets')" />
+  <Import Project="packages\Antlr4.CodeGenerator.4.6.6\build\Antlr4.CodeGenerator.targets" Condition="Exists('packages\Antlr4.CodeGenerator.4.6.6\build\Antlr4.CodeGenerator.targets')" />
+</Project>

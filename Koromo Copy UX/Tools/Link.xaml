@@ -1,0 +1,443 @@
+﻿<UserControl x:Class="Koromo_Copy_UX.Tools.Link"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Koromo_Copy_UX.Tools"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="2000" d:DesignWidth="300">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock FontSize="25" Text="{DynamicResource tools_and_utility_collection}" FontWeight="Thin"/>
+            <TextBlock FontSize="13" Text="{DynamicResource desc_tools_and_utilities}" FontWeight="Thin"/>
+
+            <TextBlock Margin="0 16 0 0" FontSize="20" Text="{DynamicResource manages}" FontWeight="Thin"/>
+
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 4 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="{DynamicResource bookmark}" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="{DynamicResource desc_bookmark}" TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="Bookmark" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Star" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="{DynamicResource record}" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="{DynamicResource desc_record}" TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="Record" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Historic" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+            
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="{DynamicResource zip_viewer}" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="{DynamicResource desc_zip_viewer}" TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="ZipViewer" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ZipBox" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="{DynamicResource zip_listing}" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="{DynamicResource desc_zip_listing}" TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="ZipListing" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Files" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="{DynamicResource zip_artists}" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="{DynamicResource desc_zip_artists}" TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="ZipArtists" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Files" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="커스텀 크롤러 (Custom Crawler)" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="크롤러를 직접 제작하거나, 제작에 도움을 줄 수 있는 유용한 도구 모음입니다." TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="CustomCrawler" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Lumx" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="스크립트 에디터 (SRCAL Script Editor)" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="스크립트를 작성하고, 오류를 확인할 수 있는 SRCAL 전용 스크립트 에디터입니다." TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="ScriptEditor" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Bug" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="랭크 시뮬레이터 (Rank Simulator)" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="태그 및 작가의 순위에 대한 통계를 얻을 수 있습니다." TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="RankSimulator" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Crown" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="압축 무결성 분석 도구 (Zip Integrity)" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="Zip파일의 압축 무결성을 확인하고, 비정상적인 작품을 재다운로드할 수 있는 도구입니다." TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="Integrity" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Wand" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <TextBlock Margin="0 16 0 0" FontSize="20" Text="{DynamicResource unmanages}" FontWeight="Thin"/>
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 4 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="시리즈 매니져 (Series Manager, Ctrl + S)" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="Hiyobi Non-H, Mangashow.me의 다운로드와 최신 상태 동기화 기능을 제공하는 독립된 다운로더입니다." TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="SeriesManager" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Images" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="만화 크롤러 (Manga Crawler)" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="Mangashow.me의 모든 만화를 분석하여 나열합니다." TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="MangaCrawler" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Lumx" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="히토미 탐색기 (Hitomi Explorer)" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="Hitomi Copy의 고급도구로 포함되어있던 도구입니다. 이 도구는 압축파일의 이름을 통해 다운로드된 파일의 재배치와 일괄 이름 변경, 로그파일에 기록된 항목과의 비교기능을 제공합니다." TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="HitomiExplorer" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Explore" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="파일시스템 뷰어 (Filesystem Enumerator)" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="특정 디렉토리의 하위 폴더 및 파일들과 해당 폴더/파일의 크기를 조사하는 유틸리티입니다." TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="FsEnumerator" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="FileTree" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+            
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="연관태그 분석기 (Related Tags Test)" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="Hitomi Copy의 고급도구로 포함되어있던 도구입니다. 이 도구는 작품들의 태그를 이용해 태그 연관성을 검사합니다." TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="RelatedTagsTest" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Tag" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="LightGray" BorderThickness="1" Margin="0 16 0 0">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="문자열 도구 (String Tools)" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="특정 폴더의 폴더/파일 이름 추출과 정렬을 수행하는 도구입니다." TextWrapping="Wrap" FontSize="13"/>
+                    </StackPanel>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Margin="8 0 4 0" Tag="StringTools" Click="Button_Click">
+                        <Button.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Button.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="CodeString" Height="17" Width="17" Opacity=".56" VerticalAlignment="Center"/>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="{DynamicResource run}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

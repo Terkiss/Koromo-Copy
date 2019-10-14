@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\Koromo Copy\packages\Costura.Fody.3.1.6\build\Costura.Fody.props" Condition="Exists('..\Koromo Copy\packages\Costura.Fody.3.1.6\build\Costura.Fody.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD214084-475D-404B-A3BD-53407DAF70BB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Koromo_Copy_UX</RootNamespace>
+    <AssemblyName>Koromo Copy UX</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TETO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=3.1.6.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\Koromo Copy\packages\Costura.Fody.3.1.6\lib\net46\Costura.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.12.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\Koromo Copy\packages\HtmlAgilityPack.1.8.12\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>..\Koromo Copy\packages\AvalonEdit.5.0.4\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\Koromo Copy\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\Koromo Copy\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Koromo Copy\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.1.1345, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Koromo Copy\packages\MaterialDesignThemes.2.5.1\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.3.3, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>..\Koromo Copy\packages\Microsoft-WindowsAPICodePack-Core.1.1.3.3\lib\net452\Microsoft.WindowsAPICodePack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.3.3, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>..\Koromo Copy\packages\Microsoft-WindowsAPICodePack-Shell.1.1.3.3\lib\net452\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Koromo Copy\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ArticleInfoWindow.xaml.cs">
+      <DependentUpon>ArticleInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistViewerToastElements.xaml.cs">
+      <DependentUpon>ArtistViewerToastElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistViewerWindow.xaml.cs">
+      <DependentUpon>ArtistViewerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BookmarkWindow.xaml.cs">
+      <DependentUpon>BookmarkWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommentElements.xaml.cs">
+      <DependentUpon>CommentElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommentWindow.xaml.cs">
+      <DependentUpon>CommentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TestWindow.xaml.cs">
+      <DependentUpon>TestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomArtistsRecommendAddArtistWindow.xaml.cs">
+      <DependentUpon>CustomArtistsRecommendAddArtistWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomArtistsRecommendAddTagWindow.xaml.cs">
+      <DependentUpon>CustomArtistsRecommendAddTagWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomArtistsRecommendBookmarkWindow.xaml.cs">
+      <DependentUpon>CustomArtistsRecommendBookmarkWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomArtistsRecommendWindow.xaml.cs">
+      <DependentUpon>CustomArtistsRecommendWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\ArtistDataGridViewModel.cs" />
+    <Compile Include="Domain\AutoCompleteBase.cs" />
+    <Compile Include="Domain\AutoCompleteLogic.cs" />
+    <Compile Include="Domain\CommentViewModel.cs" />
+    <Compile Include="Domain\Converter.cs" />
+    <Compile Include="Domain\CustomArtistsRecommendationBookmarkDataGridViewModel.cs" />
+    <Compile Include="Domain\CustomArtistsRecommendationDataGridViewModel.cs" />
+    <Compile Include="Domain\DataGridSorter.cs" />
+    <Compile Include="Domain\DownloadDataGridViewModel.cs" />
+    <Compile Include="Domain\DownloaderHelper.cs" />
+    <Compile Include="Domain\DropShadow.cs" />
+    <Compile Include="Domain\FinderDataGridViewModel.cs" />
+    <Compile Include="Domain\GlobalImpl.cs" />
+    <Compile Include="Domain\ScriptInfoViewModel.cs" />
+    <Compile Include="Domain\PatchNoteViewModel.cs" />
+    <Compile Include="Domain\PathFilenameSorter.cs" />
+    <Compile Include="Domain\SettingAdvancedViewModel.cs" />
+    <Compile Include="Domain\SettingDownloaderViewModel.cs" />
+    <Compile Include="Domain\SettingHitomiViewModel.cs" />
+    <Compile Include="Domain\SettingViewInterfaceModel.cs" />
+    <Compile Include="Domain\SettingWrap.cs" />
+    <Compile Include="Domain\ToolIndexDataGridViewModel.cs" />
+    <Compile Include="Domain\UXConsole.cs" />
+    <Compile Include="DownloadElements.xaml.cs">
+      <DependentUpon>DownloadElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadSpace.xaml.cs">
+      <DependentUpon>DownloadSpace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FinderWindow.xaml.cs">
+      <DependentUpon>FinderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupViewerWindow.xaml.cs">
+      <DependentUpon>GroupViewerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NonTopmostPopup.cs" />
+    <Compile Include="KS\KoromoService.xaml.cs">
+      <DependentUpon>KoromoService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Language\Lang.cs" />
+    <Compile Include="PatchNoteElements.xaml.cs">
+      <DependentUpon>PatchNoteElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatchNoteWindow.xaml.cs">
+      <DependentUpon>PatchNoteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewImageElements.xaml.cs">
+      <DependentUpon>PreviewImageElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewWindow.xaml.cs">
+      <DependentUpon>PreviewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecommendArtistElements.xaml.cs">
+      <DependentUpon>RecommendArtistElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecommendSpace.xaml.cs">
+      <DependentUpon>RecommendSpace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecordWindow.xaml.cs">
+      <DependentUpon>RecordWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptInfoElements.xaml.cs">
+      <DependentUpon>ScriptInfoElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Bookmark\Bookmark.xaml.cs">
+      <DependentUpon>Bookmark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Bookmark\BookmarkAdd.xaml.cs">
+      <DependentUpon>BookmarkAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Bookmark\BookmarkEditClass.xaml.cs">
+      <DependentUpon>BookmarkEditClass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Bookmark\BookmarkMessage.xaml.cs">
+      <DependentUpon>BookmarkMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Bookmark\BookmarkMessageOk.xaml.cs">
+      <DependentUpon>BookmarkMessageOk.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Bookmark\BookmarkModel.cs" />
+    <Compile Include="Utility\Bookmark\BookmarkPage.xaml.cs">
+      <DependentUpon>BookmarkPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Bookmark\BookmarkPageDataGridViewModel.cs" />
+    <Compile Include="Utility\Bookmark\BookmarkPageThumbnail.xaml.cs">
+      <DependentUpon>BookmarkPageThumbnail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Bookmark\BookmarkSetting.cs" />
+    <Compile Include="Utility\Bookmark\BookmarkSetting.xaml.cs">
+      <DependentUpon>BookmarkSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Bookmark\BookmarkTool.xaml.cs">
+      <DependentUpon>BookmarkTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Bookmark\BookmarkToolDangling.xaml.cs">
+      <DependentUpon>BookmarkToolDangling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\DCTools.xaml.cs">
+      <DependentUpon>DCTools.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ForbiddenTester.xaml.cs">
+      <DependentUpon>ForbiddenTester.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\GalleryExplorer\AutoCompleteBase2.cs" />
+    <Compile Include="Utility\GalleryExplorer\GalleryDataGridViewModel.cs" />
+    <Compile Include="Utility\GalleryExplorer\GalleryExplorer.xaml.cs">
+      <DependentUpon>GalleryExplorer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\GalleryExplorer\SkyrimGalleryAnalyzer.cs" />
+    <Compile Include="Utility\RankSimulator.xaml.cs">
+      <DependentUpon>RankSimulator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\RankSimulatorStat.xaml.cs">
+      <DependentUpon>RankSimulatorStat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\RankSimulatorStatistics.cs" />
+    <Compile Include="Utility\ScriptEditorBraceFolding.cs" />
+    <Compile Include="SearchElements.xaml.cs">
+      <DependentUpon>SearchElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchMaterialElements.xaml.cs">
+      <DependentUpon>SearchMaterialElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchSimpleElements.xaml.cs">
+      <DependentUpon>SearchSimpleElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchSpace.xaml.cs">
+      <DependentUpon>SearchSpace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingSpace.xaml.cs">
+      <DependentUpon>SettingSpace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingViewAdvanced.xaml.cs">
+      <DependentUpon>SettingViewAdvanced.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingViewDownloader.xaml.cs">
+      <DependentUpon>SettingViewDownloader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingViewHitomi.xaml.cs">
+      <DependentUpon>SettingViewHitomi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingViewInformation.xaml.cs">
+      <DependentUpon>SettingViewInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingViewInterface.xaml.cs">
+      <DependentUpon>SettingViewInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingViewPixiv.xaml.cs">
+      <DependentUpon>SettingViewPixiv.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingViewScript.xaml.cs">
+      <DependentUpon>SettingViewScript.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingViewUI.xaml.cs">
+      <DependentUpon>SettingViewUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingViewUpdate.xaml.cs">
+      <DependentUpon>SettingViewUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolSpace.xaml.cs">
+      <DependentUpon>ToolSpace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WheelSpeedScrollViewer.cs" />
+    <Compile Include="Tools\ArtistsMap.xaml.cs">
+      <DependentUpon>ArtistsMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Link.xaml.cs">
+      <DependentUpon>Link.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Statistics.xaml.cs">
+      <DependentUpon>Statistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ArrangePanel.cs" />
+    <Compile Include="Utility\CustomCrawler.xaml.cs">
+      <DependentUpon>CustomCrawler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\CustomCrawlerCAL.xaml.cs">
+      <DependentUpon>CustomCrawlerCAL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\CustomCrawlerCreate.xaml.cs">
+      <DependentUpon>CustomCrawlerCreate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\CustomCrawlerDataGridViewModel.cs" />
+    <Compile Include="Utility\CustomCrawlerImage.xaml.cs">
+      <DependentUpon>CustomCrawlerImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\CustomCrawlerTree.xaml.cs">
+      <DependentUpon>CustomCrawlerTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\DoubleThumbSlider.xaml.cs">
+      <DependentUpon>DoubleThumbSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\FallsPanel.cs" />
+    <Compile Include="Utility\MangaCrawler.xaml.cs">
+      <DependentUpon>MangaCrawler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\MangaCrawlerElements.xaml.cs">
+      <DependentUpon>MangaCrawlerElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\PackPanel.cs" />
+    <Compile Include="Utility\ScriptEditor.xaml.cs">
+      <DependentUpon>ScriptEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\SeriesManager.xaml.cs">
+      <DependentUpon>SeriesManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\SeriesManagerElements.xaml.cs">
+      <DependentUpon>SeriesManagerElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\SeriesManagerElementsInfo.xaml.cs">
+      <DependentUpon>SeriesManagerElementsInfo.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Utility\SRCAL.xshd" />
+    <Compile Include="Utility\UniversalDownloadManager.xaml.cs">
+      <DependentUpon>UniversalDownloadManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipArtists\ZipArtists.xaml.cs">
+      <DependentUpon>ZipArtists.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipArtists\ZipArtistsAutoComplete.cs" />
+    <Compile Include="Utility\ZipArtists\ZipArtistsElements.xaml.cs">
+      <DependentUpon>ZipArtistsElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipArtists\ZipArtistsFilter.xaml.cs">
+      <DependentUpon>ZipArtistsFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipArtists\ZipArtistsModel.cs" />
+    <Compile Include="Utility\ZipArtists\ZipArtistsSetting.xaml.cs">
+      <DependentUpon>ZipArtistsSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipArtists\ZipArtistsSorting.xaml.cs">
+      <DependentUpon>ZipArtistsSorting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipArtists\ZipArtistsStatistics.xaml.cs">
+      <DependentUpon>ZipArtistsStatistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipArtists\ZipArtistsTool.xaml.cs">
+      <DependentUpon>ZipArtistsTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipArtists\ZipArtistsToolMove.xaml.cs">
+      <DependentUpon>ZipArtistsToolMove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipArtists\ZipArtistsToolTransform.xaml.cs">
+      <DependentUpon>ZipArtistsToolTransform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipIntegrity.xaml.cs">
+      <DependentUpon>ZipIntegrity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipListing.xaml.cs">
+      <DependentUpon>ZipListing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipListingAutoComplete.cs" />
+    <Compile Include="Utility\ZipListingElements.xaml.cs">
+      <DependentUpon>ZipListingElements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipListingFilter.xaml.cs">
+      <DependentUpon>ZipListingFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipListingModel.cs" />
+    <Compile Include="Utility\ZipListingPage.xaml.cs">
+      <DependentUpon>ZipListingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipListingSorting.xaml.cs">
+      <DependentUpon>ZipListingSorting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipListingStatistics.xaml.cs">
+      <DependentUpon>ZipListingStatistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipViewer.xaml.cs">
+      <DependentUpon>ZipViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ZipViewerElements.xaml.cs">
+      <DependentUpon>ZipViewerElements.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ArticleInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ArtistViewerToastElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ArtistViewerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BookmarkWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommentElements.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CommentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomArtistsRecommendAddArtistWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomArtistsRecommendAddTagWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomArtistsRecommendBookmarkWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomArtistsRecommendWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DownloadElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DownloadSpace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FinderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupViewerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KS\KoromoService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Language\Lang.ko-KR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PatchNoteElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatchNoteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PreviewImageElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PreviewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecommendArtistElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecommendSpace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScriptInfoElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchMaterialElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchSimpleElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchSpace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingSpace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingViewAdvanced.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingViewDownloader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingViewHitomi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingViewInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingViewInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingViewPixiv.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingViewScript.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingViewUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingViewUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolSpace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\ArtistsMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Link.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Statistics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Bookmark\Bookmark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Bookmark\BookmarkAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Bookmark\BookmarkEditClass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Bookmark\BookmarkMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Bookmark\BookmarkMessageOk.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Bookmark\BookmarkPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Bookmark\BookmarkPageThumbnail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Bookmark\BookmarkSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Bookmark\BookmarkTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Bookmark\BookmarkToolDangling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\CustomCrawler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\CustomCrawlerCAL.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\CustomCrawlerCreate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\CustomCrawlerImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\CustomCrawlerTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\DCTools.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\DoubleThumbSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ForbiddenTester.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\GalleryExplorer\GalleryExplorer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utility\MangaCrawler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\MangaCrawlerElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\RankSimulator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\RankSimulatorStat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ScriptEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\SeriesManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\SeriesManagerElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\SeriesManagerElementsInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\UniversalDownloadManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipArtists\ZipArtists.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipArtists\ZipArtistsElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipArtists\ZipArtistsFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipArtists\ZipArtistsSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipArtists\ZipArtistsSorting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipArtists\ZipArtistsStatistics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipArtists\ZipArtistsTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipArtists\ZipArtistsToolMove.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipArtists\ZipArtistsToolTransform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipIntegrity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipListing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipListingElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipListingFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipListingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipListingSorting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipListingStatistics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\ZipViewerElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Page Include="Language\Lang.en-US.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Language\Lang.ja-JP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Koromo Copy\Koromo Copy.csproj">
+      <Project>{41065ea7-bd36-4d4d-848e-d35f5a34ccad}</Project>
+      <Name>Koromo Copy</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TETO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\Koromo Copy\packages\Fody.3.2.12\build\Fody.targets" Condition="Exists('..\Koromo Copy\packages\Fody.3.2.12\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\Koromo Copy\packages\Fody.3.2.12\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Koromo Copy\packages\Fody.3.2.12\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\Koromo Copy\packages\Costura.Fody.3.1.6\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Koromo Copy\packages\Costura.Fody.3.1.6\build\Costura.Fody.props'))" />
+  </Target>
+</Project>

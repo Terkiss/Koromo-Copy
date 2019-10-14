@@ -1,0 +1,193 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:Koromo_Copy_UX.Language">
+    <!--
+                        Global Token
+    -->
+    <x:Static x:Key="count_postfix" Member="system:String.Empty"/>
+    <x:Static x:Key="score_postfix" Member="system:String.Empty"/>
+
+    <!--
+                  Main Window Component Tokens
+    -->
+    <system:String x:Key="search">Search</system:String>
+    <system:String x:Key="stop">Stop</system:String>
+    <system:String x:Key="download">Download</system:String>
+    <system:String x:Key="artists_recommend">Artists</system:String>
+    <system:String x:Key="tools">Tools</system:String>
+    <system:String x:Key="setting">Settings</system:String>
+    <!-- Search Space -->
+    <system:String x:Key="searched">Search Result</system:String>
+    <system:String x:Key="searched_default">Search Result: 0</system:String>
+    <system:String x:Key="tidy">Tidy</system:String>
+    <system:String x:Key="selectall">Select All</system:String>
+    <system:String x:Key="selectallcancel">Deselect All</system:String>
+    <!-- Search Elements -->
+    <system:String x:Key="uploaded_date">Uploaded</system:String>
+    <system:String x:Key="tag">Tags</system:String>
+    <system:String x:Key="find_artists">Find Artists</system:String>
+    <system:String x:Key="find_groups">Find Groups</system:String>
+    <system:String x:Key="preview">Preview</system:String>
+    <system:String x:Key="find_comment">Comments</system:String>
+    <system:String x:Key="find_exh">View ex-hentai</system:String>
+    <system:String x:Key="title">Title</system:String>
+    <system:String x:Key="artist">Artists</system:String>
+    <system:String x:Key="group">Groups</system:String>
+    <system:String x:Key="series">Series</system:String>
+    <system:String x:Key="character">Characters</system:String>
+    <!-- Download Space -->
+    <system:String x:Key="index">Index</system:String>
+    <system:String x:Key="index2">Index</system:String>
+    <system:String x:Key="download_status">Download Status</system:String>
+    <system:String x:Key="total_download_size">Total Download Size</system:String>
+    <system:String x:Key="downloaded_size">Downloaded Size</system:String>
+    <system:String x:Key="download_speed">Download Speed</system:String>
+    <system:String x:Key="pause">Pause</system:String>
+    <system:String x:Key="resume">Resume</system:String>
+    <system:String x:Key="path">Path</system:String>
+    <!-- Recommend Space -->
+    <system:String x:Key="custom_artists_recommendation">Custom</system:String>
+    <system:String x:Key="hide_downloaded_artists" xml:space="preserve">Hide Downloaded Artists </system:String>
+    <system:String x:Key="take_picture">Save as Image</system:String>
+    <!-- Recommend Artists Elements -->
+    <system:String x:Key="score">Score</system:String>
+    <system:String x:Key="detail_view">View Detail</system:String>
+    <!-- Tool Space -->
+    <system:String x:Key="tools_and_utility">Tools and Utilities</system:String>
+    <system:String x:Key="statistics">Statistics</system:String>
+    <!-- Link -->
+    <system:String x:Key="tools_and_utility_collection">Tools and Utilities Collection</system:String>
+    <system:String x:Key="desc_tools_and_utilities">Koromo Copy includes several tools for managing downloading and downloaded files.</system:String>
+    <system:String x:Key="manages">Managed Tools</system:String>
+    <system:String x:Key="unmanages">Unmanaged Tools</system:String>
+    <system:String x:Key="run">Run</system:String>
+    <system:String x:Key="bookmark">Bookmark Tool (Bookmark, Ctrl + B)</system:String>
+    <system:String x:Key="desc_bookmark">It is a tool to bookmark and manage artists, groups, and works.</system:String>
+    <system:String x:Key="record">Record (Recorder)</system:String>
+    <system:String x:Key="desc_record">Shows all download history.</system:String>
+    <system:String x:Key="zip_viewer">Zipped-File Folder Viewer (Zip Viewer, Ctrl + E)</system:String>
+    <system:String x:Key="desc_zip_viewer">You can view the thumbnails of the files by dragging and dropping the folder containing the compressed files. It is similar to the preview function in Explorer. If the compressed file was downloaded via hitomi.la, it analyzes the Info.json file included in the compressed file and displays brief information.</system:String>
+    <system:String x:Key="zip_listing">Zipped-File Analyzer (Zip Listing, Ctrl + L)</system:String>
+    <system:String x:Key="desc_zip_listing">It is available only for compressed files with compression setting of Koromo copy. This tool analyzes all downloaded compressed files in specific subfolders to provide a separate search environment.</system:String>
+    <system:String x:Key="zip_artists">Zipped-File Folder Analyzer (Zip Artists, Ctrl + A)</system:String>
+    <system:String x:Key="desc_zip_artists">It is available only for compressed files with compression setting of Koromo copy. This tool provides a separate browsing environment by analyzing downloaded compressed files in specific subfolders on a folder-by-folder basis. It is very useful for searching folders classified by artist.</system:String>
+    <!-- Statistics -->
+    <system:String x:Key="trends">Trends</system:String>
+    <!-- Setting Space -->
+    <system:String x:Key="information">Information</system:String>
+    <system:String x:Key="downloader">Downloader</system:String>
+    <system:String x:Key="hitomi">Hitomi</system:String>
+    <system:String x:Key="pixiv">Pixiv</system:String>
+    <system:String x:Key="interface">Interface</system:String>
+    <system:String x:Key="script">Script</system:String>
+    <system:String x:Key="update">Update</system:String>
+    <system:String x:Key="advanced_setting">Advanced</system:String>
+    <!-- Setting Information Space -->
+    <system:String x:Key="latest_sync" xml:space="preserve">Lastest Synced Date : </system:String>
+    <system:String x:Key="sync">Synchronization</system:String>
+    <system:String x:Key="progress">Progress:</system:String>
+    <system:String x:Key="total_byte">Total Bytes:</system:String>
+    <system:String x:Key="downloaded_byte">Downloaded Bytes:</system:String>
+    <system:String x:Key="progress_time">Progress Time:</system:String>
+    <system:String x:Key="remain_time">Remain Time:</system:String>
+    <!-- Setting Downlaoder Space -->
+    <system:String x:Key="download_setting">Downloader Settings</system:String>
+    <system:String x:Key="autozip" xml:space="preserve">  Auto Zip</system:String>
+    <system:String x:Key="max_thread" xml:space="preserve">Maximum number of threads to use for downloading : </system:String>
+    <x:Static x:Key="count_postfix_pp" Member="system:String.Empty"/>
+    <system:String x:Key="tooltip_autozip">Automatically compress the folder containing downloaded files. After compressing, downloaded files will be deleted.</system:String>
+    <!-- Setting Hitomi Space -->
+    <system:String x:Key="general_setting">General Settings</system:String>
+    <system:String x:Key="download_path" xml:space="preserve">Download Path : </system:String>
+    <system:String x:Key="exclusive_tags" xml:space="preserve">Exclusive Tags : </system:String>
+    <system:String x:Key="language" xml:space="preserve">Language : </system:String>
+    <system:String x:Key="autosync" xml:space="preserve">  Automatic data synchronization when running the program</system:String>
+    <system:String x:Key="optimize_data" xml:space="preserve">  Enable data optimization</system:String>
+    <system:String x:Key="original_title" xml:space="preserve">  Use original title</system:String>
+    <system:String x:Key="download_info" xml:space="preserve">  Save the information file together</system:String>
+    <system:String x:Key="disable_similar_artists" xml:space="preserve">  Hide similar artists in the artists window</system:String>
+    <system:String x:Key="disable_latest_download" xml:space="preserve">  Do not show lastest download date</system:String>
+    <system:String x:Key="search_setting">Search Settings</system:String>
+    <system:String x:Key="adv_search" xml:space="preserve">  Use advanced search</system:String>
+    <system:String x:Key="adv_search_default_lang" xml:space="preserve">  Always add the language set as an advanced search query</system:String>
+    <system:String x:Key="search_fuzzy" xml:space="preserve">  Use Fuzzy Algorithm in Autocomplete</system:String>
+    <system:String x:Key="artists_recomment_setting" xml:space="preserve">Artist Recommendation Settings</system:String>
+    <system:String x:Key="ar_only_fm" xml:space="preserve">  When analyzing metadata, only use female and male tags</system:String>
+    <system:String x:Key="ar_multiple" xml:space="preserve">  Do not multiply the number of articles by the author</system:String>
+    <system:String x:Key="ar_all_lang" xml:space="preserve">  Generate based on all languages</system:String>
+    <system:String x:Key="ar_algorithm" >Analysis Algortihm</system:String>
+    <system:String x:Key="ar_default" xml:space="preserve">  Default Algorithm</system:String>
+    <system:String x:Key="ar_xi" xml:space="preserve">  Xi Algorithm</system:String>
+    <system:String x:Key="ar_rms" xml:space="preserve">  RMS Algorithm</system:String>
+    <system:String x:Key="ar_cos" xml:space="preserve">  Cosine Algorithm</system:String>
+    <system:String x:Key="msg_blank_path">The path must not be empty.</system:String>
+    <system:String x:Key="msg_invalid_path">Invalid path!</system:String>
+    <system:String x:Key="msg_it">Must contain at least one {Id} or {Title}</system:String>
+    <system:String x:Key="msg_invalid_token" xml:space="preserve">There is an invalid token. </system:String>
+    <system:String x:Key="all_lang">Any language</system:String>
+    <system:String x:Key="tooltip_exclusive_tags">List of tags to exclude for a deafult search.</system:String>
+    <system:String x:Key="tooltip_opt_data">This setting saves memory by deleting all data other than the selected language.</system:String>
+    <system:String x:Key="tooltip_original_title">Use the original title displayed by E-Hentai. You must restart the program.</system:String>
+    <system:String x:Key="tooltip_info_file">The JSon file containing the work information file is saved in the same folder as the work.</system:String>
+    <system:String x:Key="tooltip_dsa">Zooming in an image in the artist window no longer displays the last download date.</system:String>
+    <system:String x:Key="tooltip_dld">You can search using the advanced search function.</system:String>
+    <system:String x:Key="tooltip_adv">Advanced search doesn't depend on the language you're set up, so it's useful if you want to search in one language only.</system:String>
+    <system:String x:Key="tooltip_adv_dl">Even if a typo occurs during a search, appropriate autocomplete results are generated.</system:String>
+    <system:String x:Key="tooltip_adv_mul">By not multiplying the number of articles by the author, you ensure that the author with many works is not exposed at the top.</system:String>
+    <system:String x:Key="tooltip_adv_al">Regardless of language, tags from all works are included in the author's total tag set for analysis.</system:String>
+    <system:String x:Key="tooltip_ar_de">Basically, the analysis is based on user logs, but it is greatly affected by the number of works of the artist. The more artists you have, the higher your chances of having a higher score.</system:String>
+    <system:String x:Key="tooltip_ar_xi">Create a list of author recommendations using a simple regression method.</system:String>
+    <system:String x:Key="tooltip_ar_rms">The algorithm similar to Root Mean Square is used to compare tag similarity between author and user log.</system:String>
+    <system:String x:Key="tooltip_ar_cos">Cosine Distance is used to compare tag similarity between author and user logs.</system:String>
+    <!-- Setting UI Space -->
+    <system:String x:Key="ui_setting">UI Settings</system:String>
+    <system:String x:Key="thumbnail_view" xml:space="preserve">  Show search results in thumbnail view</system:String>
+    <system:String x:Key="tooltip_thumbnail">Display search results only with thumbnails and brief information about that work. You must restart the program.</system:String>
+    <!-- Setting Update Space -->
+    <system:String x:Key="current_version" xml:space="preserve">Current Version: </system:String>
+    <system:String x:Key="latest_version" xml:space="preserve">Newest Version: </system:String>
+    <system:String x:Key="bringup" xml:space="preserve">Importing...</system:String>
+    <system:String x:Key="require_update" xml:space="preserve"> -- Need Update!</system:String>
+    <system:String x:Key="this_latest_versiopn" xml:space="preserve"> -- The Latest Version!</system:String>
+    <system:String x:Key="update_start">Start Update</system:String>
+    <system:String x:Key="patchnote">Patch Note</system:String>
+    <system:String x:Key="check_update">Checking for updates...</system:String>
+    <system:String x:Key="downloading">Downloading...</system:String>
+    <system:String x:Key="retry">Retrying to download...</system:String>
+
+    <!--
+                  Artists Viewer Window Component Tokens
+    -->
+    <system:String x:Key="count">Count</system:String>
+    <system:String x:Key="download_all">Download All</system:String>
+    <system:String x:Key="select_inverse">Inverse Selection</system:String>
+    <system:String x:Key="deselect_title_similar">Deselect Title Similar Works</system:String>
+    <system:String x:Key="deselect_downloaded">Deselect Already Downloaded Works</system:String>
+    <system:String x:Key="view_detail_information">Display Detailed Information</system:String>
+    <system:String x:Key="msg_ddclick_car">Update to the artists recommendation list in Main-Window, if double-click!</system:String>
+    <system:String x:Key="similar_artists">Similar Artists</system:String>
+    <system:String x:Key="view_more">View More</system:String>
+    <system:String x:Key="last_download">Last Download</system:String>
+
+    <!--
+                             Messages
+    -->
+    <system:String x:Key="msg_loading_data">Loading database ...</system:String>
+    <system:String x:Key="msg_unknown_error" xml:space="preserve">An unhandled error occurred within the program. If the error persists, please contact the developers. </system:String>
+    <system:String x:Key="msg_memory_cleanup">Clean-up memory!</system:String>
+    <system:String x:Key="msg_download_metadata">Downloading metadata...</system:String>
+    <system:String x:Key="msg_download_hiddendata">Downloading hiddendata...</system:String>
+    <system:String x:Key="msg_download_title">Downloading titles...</system:String>
+    <system:String x:Key="msg_download_data_complete">Downloaded all of data.!</system:String>
+    <system:String x:Key="msg_new_update">New updates are available! Please check in Settings -> Update!</system:String>
+    <system:String x:Key="msg_incorret_search_grammar">Search grammar is invalid.</system:String>
+    <system:String x:Key="msg_tidy" xml:space="preserve"> items has organized!</system:String>
+    <system:String x:Key="msg_download_start" xml:space="preserve"> start downloading...</system:String>
+    <system:String x:Key="msg_download_complete">Download complete!</system:String>
+    <system:String x:Key="msg_download_pause">Downloading Pause</system:String>
+    <system:String x:Key="msg_download_resume">Downloading Resume</system:String>
+    <system:String x:Key="msg_wait_fucking_loading">Please try after all the thumbnails are loaded!</system:String>
+    <system:String x:Key="msg_wait_fucking_all_loading">Please try after the thumbnails of selected works have been loaded!</system:String>
+
+</ResourceDictionary>
